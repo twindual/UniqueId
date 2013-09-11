@@ -2,8 +2,8 @@ NationalId
 ==========
 
 Generate, Validate, and Format National Id numbers.
+
 Currenty supports:
-Currently supported numbers:
 - Canadian Social Insurance Number (SIN)
 - Canadian Ontario Health Number (OHIP)
 - United States Social Security Number (SSN)
