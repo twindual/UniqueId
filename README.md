@@ -1,7 +1,7 @@
 NationalId
 ==========
 
-Generate, Validate, and Format National Id numbers.
+Generate, Validate, and Format National Id numbers in PHP.
 
 Currenty supports:
 - Canadian Social Insurance Number (SIN)
