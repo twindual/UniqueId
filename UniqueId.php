@@ -71,7 +71,7 @@
  *          to federal control, but current SSA documents claim no
  *          numbers above 799 have ever been used.
  */ 
-class NationalId
+class UniqueId
 {
 	const US_SSN_VALID_LENGTH			=   9;
 	const US_SSN_INVALID_LENGTH			= 100;
@@ -92,11 +92,11 @@ class NationalId
 	
 	
 	/**
-	 * Format a national id number.
+	 * Format a Unique ID number.
 	 *
 	 * @author André Fortin <andre.v.fortin@gmail.com>
 	 */
-	 public function format( $country_code = 'CA', $type = 'SIN', $id_number = '000-000-000' )
+	 public function format( $country_code = 'CA', $type = 'SIN', $region = '', $id_number = '000-000-000' )
 	{
 		$result = array();
 		switch ( strtoupper( $country_code ) )
@@ -138,7 +138,7 @@ class NationalId
 	 *
 	 * @author André Fortin <andre.v.fortin@gmail.com>
 	 */
-	public function generate( $country_code = 'CA', $type = 'SIN', $optional = '' )
+	public function generate( $country_code = 'CA', $type = 'SIN', $region = '' )
 	{
 		$result = array();
 		switch ( strtoupper( $country_code ) )
@@ -147,7 +147,7 @@ class NationalId
 				switch( strtoupper( $type ) )
 				{
 					case 'SIN':
-						$result = $this->generate_CA_SIN( strtoupper( $optional ) );
+						$result = $this->generate_CA_SIN( strtoupper( $region ) );
 						break;
 					case 'OHIP':
 						$result = $this->generate_CA_OHIP();
@@ -161,7 +161,7 @@ class NationalId
 				switch( $type )
 				{
 					case 'SSN':
-						$result = $this->generate_US_SSN( strtoupper( $optional ) );
+						$result = $this->generate_US_SSN( strtoupper( $region ) );
 						break;
 					default:
 						break;
@@ -180,7 +180,7 @@ class NationalId
 	 *
 	 * @author André Fortin <andre.v.fortin@gmail.com>
 	 */
-	public function validate( $country_code = 'CA', $type = 'SIN', $id_number = '000-000-000' )
+	public function validate( $country_code = 'CA', $type = 'SIN', $region = '', $id_number = '000-000-000' )
 	{
 		$result = array();
 		switch ( strtoupper( $country_code ) )
@@ -872,25 +872,25 @@ class NationalId
 }
 
 /*
-$oNationalId = new NationalId();
+$oUniqueId = new UniqueId();
 
-$result = $oNationalId->generate( 'CA', 'OHIP' );
-$result = $oNationalId->validate( 'CA', 'OHIP', $result );
-echo "OHIP = [" . $oNationalId->format( 'CA', 'OHIP', $result["id_number"] ) . "]<br/>";
+$result = $oUniqueId->generate( 'CA', 'OHIP' );
+$result = $oUniqueId->validate( 'CA', 'OHIP', $result );
+echo "OHIP = [" . $oUniqueId->format( 'CA', 'OHIP', '', $result["id_number"] ) . "]<br/>";
 var_dump( $result );
 
-$result = $oNationalId->generate( 'CA', 'SIN', 'QC' );
-$result = $oNationalId->validate( 'CA', 'SIN', $result );
-echo "SIN = [" . $oNationalId->format( 'CA', 'SIN', $result["id_number"] ) . "]<br/>";
+$result = $oUniqueId->generate( 'CA', 'SIN', 'QC' );
+$result = $oUniqueId->validate( 'CA', 'SIN', $result );
+echo "SIN = [" . $oUniqueId->format( 'CA', 'SIN', $result["id_number"] ) . "]<br/>";
 var_dump( $result );
 
-$result = $oNationalId->generate( 'US', 'SSN', 'AZ' );
-$result = $oNationalId->validate( 'US', 'SSN', $result );
-echo "SSN = [" . $oNationalId->format( 'US', 'SSN', $result["id_number"] ) . "]<br/>";
+$result = $oUniqueId->generate( 'US', 'SSN', 'AZ' );
+$result = $oUniqueId->validate( 'US', 'SSN', $result );
+echo "SSN = [" . $oUniqueId->format( 'US', 'SSN', $result["id_number"] ) . "]<br/>";
 var_dump( $result );
 
-$result = $oNationalId->generate( 'US', 'SSN', 'PR' );
-$result = $oNationalId->validate( 'US', 'SSN', $result );
-echo "SSN = [" . $oNationalId->format( 'US', 'SSN', $result["id_number"] ) . "]<br/>";
+$result = $oUniqueId->generate( 'US', 'SSN', 'PR' );
+$result = $oUniqueId->validate( 'US', 'SSN', $result );
+echo "SSN = [" . $oUniqueId->format( 'US', 'SSN', $result["id_number"] ) . "]<br/>";
 var_dump( $result );
 */
