@@ -1,12 +1,16 @@
-NationalId
+UniqueId
 ==========
 
-Generate, Validate, and Format National Id numbers in PHP.
+Generate, Validate, and Format National, Provincial, and State Id numbers in PHP.
 
 Currenty supports:
+
+National Id:
 - Canadian Social Insurance Number (SIN)
-- Canadian Ontario Health Number (OHIP)
 - United States Social Security Number (SSN)
+
+Regional Id:
+- Canadian Ontario Health Number (OHIP)
 
 When generating SIN or SSN, you can optionally chose the province or state of registration.
 
