@@ -71,7 +71,7 @@
  *          to federal control, but current SSA documents claim no
  *          numbers above 799 have ever been used.
  */ 
-class UniqueId
+class NationalId
 {
         const US_SSN_VALID_LENGTH                        =   9;
         const US_SSN_INVALID_LENGTH                        = 100;
