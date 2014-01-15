@@ -10,7 +10,8 @@ National Id:
 - United States Social Security Number (SSN)
 
 Regional Id:
-- Canadian Ontario Health Number (OHIP)
+- Canadian Health Number - Ontario(OHIP)
+- Canadian Provincial Driver's Licence Numbers - Ontario, Quebec, Alberta, British Columbia, Nova Scotia, P.E.I.,
 
 When generating SIN or SSN, you can optionally chose the province or state of registration.
 
