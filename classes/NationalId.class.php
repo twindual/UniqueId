@@ -76,15 +76,15 @@
  */ 
 class NationalId
 {
-	const US_SSN_VALID_LENGTH					=   9;
-	const US_SSN_INVALID_LENGTH				= 100;
-	const US_SSN_INVALID_AREA_NUMBER			= 101;
-	const US_SSN_INVALID_GROUP_CODE			= 102;
-	const US_SSN_INVALID_SERIAL_NUMBER		= 103;
+	const US_SSN_VALID_LENGTH          =   9;
+	const US_SSN_INVALID_LENGTH        = 100;
+	const US_SSN_INVALID_AREA_NUMBER   = 101;
+	const US_SSN_INVALID_GROUP_CODE    = 102;
+	const US_SSN_INVALID_SERIAL_NUMBER = 103;
 	
-	const CA_SIN_VALID_LENGTH					=   9;
-	const CA_SIN_INVALID_LENGTH				= 100;
-	const CA_SIN_INVALID_CHECKDIGIT			= 101;
+	const CA_SIN_VALID_LENGTH          =   9;
+	const CA_SIN_INVALID_LENGTH        = 100;
+	const CA_SIN_INVALID_CHECKDIGIT    = 101;
 
 	
 	/**
@@ -92,7 +92,7 @@ class NationalId
 	 *
 	 * @author André Fortin <andre.v.fortin@gmail.com>
 	 */
-	 public function format( $country_code = 'CA', $type = 'SIN', $region_code = null, $id_number = '000-000-000' )
+	public function format( $country_code = 'CA', $type = 'SIN', $region_code = null, $id_number = '000-000-000' )
 	{
 		$result = array();
 		switch ( strtoupper( $country_code ) )
